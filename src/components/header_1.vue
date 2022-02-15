@@ -1,0 +1,24 @@
+<template>
+  <div id="app">
+
+    <header class="flex flex-wrap justify-around">
+      <img class=" flex justify-center items-center" src="../assets/Logo 咖啡.png" alt=""/>
+        <div class="flex flex-wrap md:flex-wrap justify-center items-center px-16 text-white">
+            <router-link to="/Home" class="text-xl mx-16">首頁</router-link>
+            <router-link to="/About" class="text-xl mx-16">關於我們</router-link>
+            <!-- <a href="/" class="text-xl mx-16"></a> -->
+             <router-link to="/Shopping" class="text-xl mx-16">線上購物</router-link>
+        </div>
+    </header>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
