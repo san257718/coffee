@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="h-screen w-screen relative overflow-hidden">
-      <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/咖啡背景02.jpg" alt=""/>
+      <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/background/咖啡背景02.jpg" alt=""/>
       <div class=" absolute top-0 h-full w-full overflow-y-auto">
         
 
@@ -16,7 +16,7 @@
               <p class="text-2xl font-bold p-4">免費WI-FI上網，舒適用餐環境</p>
               <p class="text-2xl font-bold p-4">歡迎來電</p>
             </div>
-            <img src="../assets/咖啡圖片02.png" alt="">
+            <img src="../assets/background/咖啡圖片02.png" alt="">
           </div>
         </main>
 
