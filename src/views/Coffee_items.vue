@@ -31,7 +31,7 @@
                             <input type="checkbox" id="name" value="1">
                       </div>
                       <div>
-                        <p class="text-lg"> 200g / 400TWD</p>
+                        <p class="text-lg">{{currentItem.unit}}g / {{currentItem.price}}TWD</p>
                       </div>
                   </div>
 
@@ -75,13 +75,25 @@ export default {
   data() {
     return {
       items: Coffee_items,
-      id: 1
+      id: 1,
+      unit: 0
     }
+  },
+   mounted() {
+    // 頁面一進來，捕捉目前網址中的 id
+    this.id = this.$router.currentRoute._value.params.id
+
+    // 在 router 裡面註冊一個 網址解析前 的觸發事件
+    // 這只會在網址改變時才會觸發
+    // 把改變後的網址的 id 存回去 this.id
+    this.$router.beforeResolve(to => {
+      this.id = to.params.id
+    })
   },
   computed:{
     currentItem(){
       return this.items.filter(item => {
-       return item.id === this.id
+       return item.id == this.id
       })[0]
     }
   },
