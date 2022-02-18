@@ -18,11 +18,11 @@
               </div>
 
               <div class="flex-wrap ">
-                <p class="text-4xl font-bold pb-14 pt-8">曼特寧 蘇門答臘</p>
-                <p class="text-xl font-semibold pb-5">烘焙度：中深烘焙</p>
-                <p class="text-xl font-semibold pb-5">產地</p>
-                <p class="text-xl font-semibold pb-5">處理法: 濕剝式處理</p>
-                <p class="text-xl font-semibold pb-5">風味: 焦糖,堅果,奶油,尾韻蜂蜜焦糖</p>
+                <p class="text-4xl font-bold pb-14 pt-8">{{currentItem.name}}</p>
+                <p class="text-xl font-semibold pb-5">烘培度 : {{currentItem.roast}}</p>
+                <p class="text-xl font-semibold pb-5">產地 : {{currentItem.origin}}</p>
+                <p class="text-xl font-semibold pb-5">處理法 : {{currentItem.method}}</p>
+                <p class="text-xl font-semibold pb-5">風味 : {{currentItem.flavour}}</p>
                   <div class="border-b py-6"></div>
                   <div class="flex pt-6 flex-wrap justify-evenly">
                     <p class="text-lg">品項: </p>
@@ -31,13 +31,12 @@
                             <input type="checkbox" id="name" value="1">
                       </div>
                       <div>
-                        <p class="text-lg">{{currentItem.unit}}g / {{currentItem.price}}TWD</p>
+                        <p class="text-lg">{{currentItem.unit}}g / {{currentItem.price}} TWD</p>
                       </div>
                   </div>
 
                   <div class="py-10 flex flex-wrap ">
                     <div class="flex justify-between border w-48">
-
                       <div class="flex items-center px-6">
                           <div>-</div>
                       </div>
@@ -51,7 +50,7 @@
                         </div>
 
                     </div>
-                      <div class="flex border p-4 ml-10 cursor-pointer bg-black text-white">
+                      <div class="flex justify-center border w-36 p-4 ml-20 cursor-pointer bg-black text-white">
                         <button>購物車</button>
                       </div>
                   </div>
@@ -76,6 +75,7 @@ export default {
     return {
       items: Coffee_items,
       id: 1,
+      name:"",
       unit: 0
     }
   },
