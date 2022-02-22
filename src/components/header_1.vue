@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  
 
     <header class="flex flex-wrap justify-around">
       <img class=" flex justify-center items-center" src="../assets/background/Logo 咖啡.png" alt=""/>
@@ -10,7 +10,6 @@
              <router-link to="/Coffee_bag" class="text-xl mx-16">線上購物</router-link>
         </div>
     </header>
-  </div>
 </template>
 
 <script>

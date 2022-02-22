@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  
       <div class="h-screen w-screen relative overflow-hidden">
       <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/background/購物車背景.png" alt=""/>
         <div class=" absolute top-0 h-full w-full overflow-y-auto">
@@ -37,7 +37,7 @@
 
                   <div class="py-10 flex flex-wrap ">
                     <div class="flex justify-between border w-48">
-                      <div class="flex items-center px-6">
+                      <div class="flex items-center px-5 cursor-pointer">
                           <div>-</div>
                       </div>
 
@@ -45,7 +45,7 @@
                           <input type="text" value="1" size="1">
                         </div>
 
-                        <div class="flex items-center px-6">
+                        <div class="flex items-center px-5 cursor-pointer">
                           <div>+</div>
                         </div>
 
@@ -63,7 +63,7 @@
             
         </div>
     </div>    
-  </div>
+  
 
 </template>
 
@@ -76,7 +76,8 @@ export default {
       items: Coffee_items,
       id: 1,
       name:"",
-      unit: 0
+      unit: 0,
+      
     }
   },
    mounted() {

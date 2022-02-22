@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  
 
     <div class="h-screen w-screen relative overflow-hidden">
       <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/background/咖啡背景.jpg" alt=""/>
@@ -26,7 +26,7 @@
         
       </div>
     </div>
-  </div>
+
 
 
 </template>
@@ -35,7 +35,7 @@
 import header_1 from '../components/header_1.vue'
 import footer_1 from '../components/footer_1.vue'
 export default {
-  name: 'Home',
+  
   components:{
    header_1,
    footer_1
