@@ -20,7 +20,7 @@
               <div class="flex-wrap ">
                 <p class="text-4xl font-bold pb-14 pt-8">{{currentItem.name}}</p>
                 <p class="text-xl font-semibold pb-5">烘培度 : {{currentItem.roast}}</p>
-                <p class="text-xl font-semibold pb-5">產地 : {{currentItem.origin}}</p>
+                <p class="text-xl font-semibold pb-5">產地 : {{currentItem.Origin}}</p>
                 <p class="text-xl font-semibold pb-5">處理法 : {{currentItem.method}}</p>
                 <p class="text-xl font-semibold pb-5">風味 : {{currentItem.flavour}}</p>
                   <div class="border-b py-6"></div>
@@ -51,7 +51,7 @@
 
                     </div>
                       <div class="flex justify-center border w-36 p-4 ml-20 cursor-pointer bg-black text-white">
-                        <button>購物車</button>
+                        <router-link to="/Shopping/">購物車</router-link>
                       </div>
                   </div>
               </div>

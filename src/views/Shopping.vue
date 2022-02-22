@@ -20,40 +20,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap justify-evenly py-12">
-                <div class="">
-                     
-                    <div>
-                        <card_1 v-for="item in items" :key="item.id"  v-bind="item" />
-                    </div>
-
-                </div>
-                    <div class="flex-row">
-                        <div class="flex py-4 border-t">
-                            <p class="flex justify-center items-center md:w-full">數量</p>
-                                <div class="flex items-center px-6 pl-16">
-                                    <div>-</div>
-                                </div>
-                                
-                                <div class="flex px-4">
-                                    <input type="text" value="1" size="1">
-                                </div>
-
-                                <div class="flex items-center px-2">
-                                    <div>+</div>
-                                </div>
-                        </div>
-                        
-                        <div class="flex justify-between pt-4 border-t">
-                            <p>小計</p>
-                            <p>TWD</p>
-                        </div>
-                        
-                    </div>
-                   
-            </div>
-        
-        
+            <cart v-for="item in cartData" :key="item.id" v-bind="item" @add="add($event)" @sub="sub($event)" />
+            
             <footer_1 />
         </div>
     </div>
@@ -62,19 +30,57 @@
 </template>
 
 <script>
-import card_1 from '../components/card_1.vue'
+import cart from '../components/cart.vue'
 import footer_1 from '../components/footer_1.vue'
 import Coffee_items from '../assets/coffee.json'
 export default {
     data() {
         return {
-            items: Coffee_items
+            items: Coffee_items,
+            cart:[
+                {id:1, count: 3},
+                {id:3, count: 8}
+            ],
         }
     },
     components:{
         footer_1,
-        card_1
+        cart
     },
+    computed:{
+        cartData() {
+        return this.cart.map(c => {
+            const temp = this.items.filter(item => item.id===c.id)[0]
+            return Object.assign(c, temp)
+            })
+        }
+    },
+    methods:{
+        add(id){
+            this.cart.forEach(c =>{
+                if(c.id === id){
+                    c.count++
+                }
+            })
+        },
+        sub (id) {
+            var del = false
+            var delIndex = 0
+
+            this.cart.forEach((e,index) => {
+                if(e.id===id){
+                    e.count--
+
+                if(e.count<=0){
+                    delIndex = index
+                    }
+                }
+            })
+            if(delIndex !== -1){
+                this.cart.splice(delIndex,1)
+            }
+        }
+    }
 }
 </script>
 
