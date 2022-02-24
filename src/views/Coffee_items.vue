@@ -4,7 +4,7 @@
       <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/background/購物車背景.png" alt=""/>
         <div class=" absolute top-0 h-full w-full overflow-y-auto">
             <header class="flex flex-wrap justify-around">
-                <img class=" flex justify-center items-center" src="../assets/background/Logo 咖啡.png" alt=""/>
+                <img class=" flex justify-center items-center" src="../assets/background/Logo-咖啡.png" alt=""/>
                     <div class="flex flex-wrap md:flex-wrap justify-center items-center px-16 text-black">
                         <router-link to="/" class="text-xl mx-16">首頁</router-link>
                         <router-link to="/About" class="text-xl mx-16">關於我們</router-link>
