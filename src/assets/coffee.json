@@ -9,7 +9,7 @@
         "unit": 200,
         "price": 300,
         "img":"Group_1.png",
-        "img1":"Group 1.png"
+        "img1":"Group-1.png"
     },
     {
         "id": 2,
@@ -21,7 +21,7 @@
         "unit": 200,
         "price": 350,
         "img":"Group_2.png",
-        "img1":"Group 2.png"
+        "img1":"Group-2.png"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
         "unit": 200,
         "price": 400,
         "img":"Group_3.png",
-        "img1":"Group 3.png"
+        "img1":"Group-3.png"
     },
     {
         "id": 4,
@@ -45,7 +45,7 @@
         "unit": 200,
         "price": 450,
         "img":"Group_4.png",
-        "img1":"Group 4.png"
+        "img1":"Group-4.png"
     },
     {
         "id": 5,
@@ -57,7 +57,7 @@
         "unit": 200,
         "price": 500,
         "img":"Group_5.png",
-        "img1":"Group 5.png"
+        "img1":"Group-5.png"
     },
     {
         "id": 6,
@@ -69,6 +69,6 @@
         "unit": 200,
         "price": 500,
         "img":"Group_6.png",
-        "img1":"Group 6.png"
+        "img1":"Group-6.png"
     }
 ]
