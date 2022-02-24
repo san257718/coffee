@@ -38,20 +38,20 @@
                   <div class="py-10 flex flex-wrap ">
                     <div class="flex justify-between border w-48">
                       <div class="flex items-center px-5 cursor-pointer">
-                          <div>-</div>
+                          <div @click="sub">-</div>
                       </div>
 
                         <div class="flex px-6">
-                          <input type="text" value="1" size="1">
+                          <input type="text" size="1" v-model="count">
                         </div>
 
                         <div class="flex items-center px-5 cursor-pointer">
-                          <div>+</div>
+                          <div @click="add">+</div>
                         </div>
 
                     </div>
-                      <div class="flex justify-center border w-36 p-4 ml-20 cursor-pointer bg-black text-white">
-                        <router-link to="/Shopping/">購物車</router-link>
+                      <div class="flex justify-center border w-36 p-4 ml-20 cursor-pointer bg-black text-white" @click="addToCart()">
+                        加到購物車
                       </div>
                   </div>
               </div>
@@ -77,6 +77,7 @@ export default {
       id: 1,
       name:"",
       unit: 0,
+      count: 1
       
     }
   },
@@ -88,7 +89,10 @@ export default {
     // 這只會在網址改變時才會觸發
     // 把改變後的網址的 id 存回去 this.id
     this.$router.beforeResolve(to => {
-      this.id = to.params.id
+      if(to.path === "/Shopping/"){
+        this.id = to.params.id
+      }
+      
     })
   },
   computed:{
@@ -97,6 +101,40 @@ export default {
        return item.id == this.id
       })[0]
     }
+  },
+  methods:{
+      add(){
+        this.count++
+      },
+      sub(){
+        if (this.count > 1){
+          this.count--
+        }else{
+          this.count=1
+        }
+      },
+      addToCart(){
+        const carts = JSON.parse(window.localStorage.getItem("coffee.carts")) ?? []
+
+        if(carts.some(c => c.id === this.id)){
+          carts.forEach(c => {
+           if(c.id == this.id){
+             c.count = Number(c.count) + this.count
+           }
+        })
+
+        }else{
+          carts.push({
+            id: this.id,
+            count: this.count
+          })
+        }
+
+         window.localStorage.setItem("coffee.carts", JSON.stringify(carts))
+         this.$router.push("/Shopping/")
+      }
+      
+    
   },
   components:{
    footer_1

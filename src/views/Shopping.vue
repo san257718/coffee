@@ -37,10 +37,8 @@ export default {
     data() {
         return {
             items: Coffee_items,
-            cart:[
-                {id:1, count: 3},
-                {id:3, count: 8}
-            ],
+            cart:[],
+
         }
     },
     components:{
@@ -49,37 +47,44 @@ export default {
     },
     computed:{
         cartData() {
-        return this.cart.map(c => {
-            const temp = this.items.filter(item => item.id===c.id)[0]
-            return Object.assign(c, temp)
+            return this.cart.map(c => {
+                const temp = this.items.filter(item => item.id==c.id)[0]
+                return Object.assign({},c, temp)
             })
         }
     },
     methods:{
         add(id){
             this.cart.forEach(c =>{
-                if(c.id === id){
+                if(c.id == id){
                     c.count++
                 }
             })
+            window.localStorage.setItem("coffee.carts",JSON.stringify(this.cart))
         },
         sub (id) {
-            var del = false
-            var delIndex = 0
-
+            var delIndex = -1
+            
             this.cart.forEach((e,index) => {
-                if(e.id===id){
+                if(e.id == id){
                     e.count--
 
-                if(e.count<=0){
+                if(e.count <= 0){
                     delIndex = index
                     }
                 }
+
             })
+           
             if(delIndex !== -1){
-                this.cart.splice(delIndex,1)
+                this.cart.splice(delIndex, 1)
             }
+            window.localStorage.setItem("coffee.carts",JSON.stringify(this.cart))
         }
+    },
+    mounted(){
+         this.cart = JSON.parse(window.localStorage.getItem("coffee.carts")) ?? []
+
     }
 }
 </script>
