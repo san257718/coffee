@@ -16,7 +16,7 @@
               <p class="text-2xl text-white font-bold p-4">免費WI-FI上網，舒適用餐環境</p>
               <p class="text-2xl text-white font-bold p-4">歡迎來電</p>
             </div>
-            <img src="../assets/background/咖啡圖片02.png" alt="">
+            <img src="../assets/background/咖啡圖片03.png" alt="">
           </div>
         </main>
 

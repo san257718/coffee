@@ -3,6 +3,7 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Coffee_bag from '../views/Coffee_bag.vue'
 import Coffee_items from '../views/Coffee_items.vue'
+import meal from '../views/meal.vue'
 import Shopping from '../views/Shopping.vue'
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: '/Coffee_items/:id',
     name: 'Coffee_items',
     component: Coffee_items
+  },
+  {
+    path: '/meal',
+    name: 'meal',
+    component: meal
   },
   {
     path: '/Shopping',

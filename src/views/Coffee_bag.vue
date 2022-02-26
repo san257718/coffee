@@ -9,6 +9,7 @@
                         <router-link to="/" class="text-xl mx-16">首頁</router-link>
                         <router-link to="/About" class="text-xl mx-16">關於我們</router-link>
                         <router-link to="/Coffee_bag" class="text-xl mx-16">線上購物</router-link>
+                        <router-link to="/Shopping" class="text-xl mx-16">購物車</router-link>
                     </div>
             </header>
 
@@ -24,7 +25,11 @@
        
      
 
-        <footer_1 />
+        <footer>
+          <div class="flex justify-center items-center md:pt-16 pt-16">
+            <p class="text-2xl">© 2022 cafe Rights Reserved.</p>
+          </div>
+        </footer>
       </div>
     </div>
   

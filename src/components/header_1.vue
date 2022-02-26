@@ -8,6 +8,7 @@
             <router-link to="/About" class="text-xl mx-16">關於我們</router-link>
             <!-- <a href="/" class="text-xl mx-16"></a> -->
              <router-link to="/Coffee_bag" class="text-xl mx-16">線上購物</router-link>
+             <router-link to="/Shopping" class="text-xl mx-16">購物車</router-link>
         </div>
     </header>
 </template>

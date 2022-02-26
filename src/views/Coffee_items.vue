@@ -9,6 +9,7 @@
                         <router-link to="/" class="text-xl mx-16">首頁</router-link>
                         <router-link to="/About" class="text-xl mx-16">關於我們</router-link>
                         <router-link to="/Coffee_bag" class="text-xl mx-16">線上購物</router-link>
+                        <router-link to="/Shopping" class="text-xl mx-16">購物車</router-link>
                     </div>
             </header>
 
@@ -17,7 +18,7 @@
                 <img :src="`/image/${currentItem.img}`">
               </div>
 
-              <div class="flex-wrap ">
+              <div class="flex-wrap">
                 <p class="text-4xl font-bold pb-14 pt-8">{{currentItem.name}}</p>
                 <p class="text-xl font-semibold pb-5">烘培度 : {{currentItem.roast}}</p>
                 <p class="text-xl font-semibold pb-5">產地 : {{currentItem.Origin}}</p>
@@ -35,30 +36,36 @@
                       </div>
                   </div>
 
-                  <div class="py-10 flex flex-wrap ">
-                    <div class="flex justify-between border w-48">
-                      <div class="flex items-center px-5 cursor-pointer">
+                  <div class="flex py-12 justify-evenly flex-wrap">
+                    <div class="flex relative ">
+                      <div class="flex items-center cursor-pointer border px-4">
                           <div @click="sub">-</div>
                       </div>
 
-                        <div class="flex px-6">
-                          <input type="text" size="1" v-model="count">
+                        <div class="flex px-4 border">
+                          <input type="text" size="1" v-model="count" class="">
                         </div>
 
-                        <div class="flex items-center px-5 cursor-pointer">
+                        <div class="flex items-center cursor-pointer border px-4">
                           <div @click="add">+</div>
                         </div>
-
                     </div>
-                      <div class="flex justify-center border w-36 p-4 ml-20 cursor-pointer bg-black text-white" @click="addToCart()">
+
+                    <div class="relative ">
+                      <div class="flex justify-center border w-32 p-4 cursor-pointer bg-black text-white" @click="addToCart()">
                         加到購物車
                       </div>
+                    </div>
                   </div>
               </div>
             </div>
 
 
-            <footer_1 />
+            <footer>
+              <div class="flex justify-center items-center md:pt-16 pt-16">
+                <p class="text-2xl">© 2022 cafe Rights Reserved.</p>
+              </div>
+            </footer>
 
             
         </div>
