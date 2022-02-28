@@ -21,17 +21,15 @@
                 </div>
             </div>
 
-            <cart v-for="item in cartData" :key="item.id" v-bind="item" @add="add($event)" @sub="sub($event)" />
+            <cart v-for="item in cartData" :key="item.id" v-bind="item" @add="add($event)" @sub="sub($event)" @del="del($event)" />
             
 
-            <meal_cart v-for="item in MealData" :key="item.id" v-bind="item" @addone="addone($event)" @subone="subone($event)" />
+            <meal_cart v-for="item in MealData" :key="item.id" v-bind="item" @addone="addone($event)" @subone="subone($event)" @delone="delone($event)" />
 
-          
-             
 
             
 
-            
+
             
             <footer>
                 <div class="flex justify-center items-center md:pt-16 pt-16">
@@ -52,12 +50,14 @@ import Coffee_items from '../assets/coffee.json'
 import light_meal from '../assets/light_meal.json'
 
 export default {
+    
     data() {
         return {
             items: Coffee_items,
             items1: light_meal,
             cart:[],
-            meal_cart:[]
+            meal_cart:[],
+            light_meal:[]
             
         }
     },
@@ -84,6 +84,8 @@ export default {
         },
         
     },
+
+        
     
     methods:{
         add(id){
@@ -94,7 +96,7 @@ export default {
             })
             window.localStorage.setItem("coffee.carts",JSON.stringify(this.cart))
         },
-        sub (id) {
+        sub(id) {
             var delIndex = -1
             
             this.cart.forEach((e,index) => {
@@ -138,6 +140,42 @@ export default {
             }
             window.localStorage.setItem("coffee.Meal",JSON.stringify(this.meal_cart))
         },
+        delone(id) {
+            
+            var delIndex = -1
+
+            this.meal_cart.forEach((e,index) => {
+                if(e.id == id){
+                    delIndex = index
+                }
+                
+                if(delIndex != -1){
+                    this.meal_cart.splice(delIndex, 1)
+                }
+            })
+
+            window.localStorage.setItem("coffee.Meal",JSON.stringify(this.meal_cart))
+        },
+        del(id) {
+            
+            var delIndex = -1
+            
+            
+
+            this.cart.forEach((e,index) => {
+                if (e.count <= 0){
+                    delIndex = index
+                }
+            })
+
+            if(delIndex < 0){
+                this.cart.splice(delIndex, 1)
+            }
+
+            window.localStorage.setItem("coffee.carts",JSON.stringify(this.cart))
+        },
+        
+        
     },
     mounted(){
          this.cart = JSON.parse(window.localStorage.getItem("coffee.carts")) ?? []

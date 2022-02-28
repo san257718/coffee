@@ -23,7 +23,7 @@
                   <div class="relative flex justify-end items-end cursor-pointer">
                     <p class="absolute text-white py-7 mx-4 ">咖啡飲品</p>
                     <p class="absolute text-white py-1 mx-2 ">coffe drink</p>
-                    <router-link to="/Coffee_bag"><img src="../assets/background/咖啡圖片1.png" alt="" class="ww:w-[300px]"></router-link>
+                    <router-link to="/meal"><img src="../assets/background/咖啡圖片1.png" alt="" class="ww:w-[300px]"></router-link>
                   </div>
                 </div>
                 <div class="">

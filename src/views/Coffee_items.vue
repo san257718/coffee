@@ -26,14 +26,9 @@
                 <p class="text-xl font-semibold pb-5">風味 : {{currentItem.flavour}}</p>
                   <div class="border-b py-6"></div>
                   <div class="flex pt-6 flex-wrap justify-evenly">
-                    <p class="text-lg">品項: </p>
-                      <div class="border h-5 w-5 bg-gray-400 my-1 ml-1">
-                            <label for="name"><span></span></label>
-                            <input type="checkbox" id="name" value="1">
-                      </div>
-                      <div>
-                        <p class="text-lg">{{currentItem.unit}}g / {{currentItem.price}} TWD</p>
-                      </div>
+                    <div>
+                      <p class="text-lg ">{{currentItem.unit}}g / {{currentItem.price}} TWD</p>
+                    </div>
                   </div>
 
                   <div class="flex py-12 justify-evenly flex-wrap">
