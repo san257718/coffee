@@ -9,13 +9,13 @@
     </div>
     <div class="flex-row py-2">
       <div class="flex py-8 my-4 border-t">
-        <p class="flex justify-center items-center md:w-full">數量</p>
-        <div class="flex items-center px-6 pl-16 cursor-pointer">
+        <p class="flex justify-center items-center md:w-full pr-4">數量</p>
+        <div class="flex items-center px-2  cursor-pointer">
           <div @click="$emit('sub',id)">-</div>
         </div>
 
         <div class="flex px-4">
-          <input type="text" size="1" v-model="count" />
+          <p class="flex justify-center">{{ count }}</p>
         </div>
 
         <div class="flex items-center px-2 cursor-pointer">

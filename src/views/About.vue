@@ -5,7 +5,7 @@
       <div class=" absolute top-0 h-full w-full overflow-y-auto">
         
 
-        <header_1 />
+        <header_1 class="text-white" />
        
         <main>
           <div class="flex flex-wrap justify-around py-16">
@@ -20,7 +20,7 @@
           </div>
         </main>
 
-        <footer_1 />
+        <footer_1 class="text-white" />
 
       </div>
     </div>

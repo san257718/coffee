@@ -1,78 +1,77 @@
 <template>
-  
+  <div class="h-screen w-screen relative overflow-hidden bg-gray-600">
+    <img
+      class="object-cover opacity-80 -z-50 h-full w-full"
+      src="../assets/background/咖啡背景.jpg"
+      alt=""
+    />
+    <div class="absolute top-0 overflow-y-auto h-full w-full">
+      <header_1 class="text-white" />
 
-    <div class="h-screen w-screen relative overflow-hidden bg-gray-600">
-      <img class=" object-cover opacity-80 -z-50 h-full w-full" src="../assets/background/咖啡背景.jpg" alt=""/>
-        <div class=" absolute top-0 overflow-y-auto  h-full w-full">
-       
-        <header_1 />
-
-        <main>
-          <div class="flex flex-wrap justify-center items-center  py-24 ">
-            
-
-              <div class="w1:w-[250px] ">
-                <div class="relative flex justify-end items-end cursor-pointer">
-                  <p class="absolute text-white py-7 mx-3 ">關於我們</p>
-                  <p class="absolute text-white py-1 mx-2 ">About Us</p>
-                  <router-link to="/About"><img src="../assets/background/咖啡圖片3.png" alt="" class=""></router-link>
-                </div>
-              </div>
-              <div class="inline-block">
-                <div class="">
-                  <div class="relative flex justify-end items-end cursor-pointer">
-                    <p class="absolute text-white py-7 mx-4 ">咖啡飲品</p>
-                    <p class="absolute text-white py-1 mx-2 ">coffe drink</p>
-                    <router-link to="/meal"><img src="../assets/background/咖啡圖片1.png" alt="" class="ww:w-[300px]"></router-link>
-                  </div>
-                </div>
-                <div class="">
-                  <div class="relative flex justify-end items-end cursor-pointer">
-                    <p class="absolute text-white py-7 mx-8 ">咖啡豆</p>
-                    <p class="absolute text-white py-1 mx-2 ">coffee beans</p>
-                    <router-link to="/Coffee_bag"><img src="../assets/background/咖啡圖片2.png" alt="" class="ww:w-[300px]"></router-link>
-                  </div>
-                </div>
-              </div>
-              <div class="w1:w-[250px]">
-                <div class="relative flex justify-end items-end cursor-pointer">
-                    <p class="absolute text-black py-7 mx-7 ">簡餐</p>
-                    <p class="absolute text-black py-1 mx-2 ">light meal</p>
-                    <router-link to="/meal"><img src="../assets/background/咖啡圖片4.png" alt="" class=""></router-link>
-                </div>
-              </div>
-
+      <main>
+        <div class="flex flex-wrap justify-center items-center py-24">
+          <div>
+            <div class="relative flex cursor-pointer">
+              <router-link to="/About">
+                <img src="../assets/background/咖啡圖片3.png" alt="" />
+                <p class="absolute bottom-7 right-2 text-white">關於我們</p>
+                <p class="absolute bottom-0 right-2 text-white">About Us</p>
+              </router-link>
+            </div>
           </div>
-          
-        </main>
-        
-        
-
-        <footer>
-          <div class="flex justify-center items-center text-white md:pt-16 pt-16">
-            <p class="text-2xl ">© 2022 cafe Rights Reserved.</p>
+          <div class="">
+            <div>
+              <div class="relative flex cursor-pointer">
+                <router-link to="/meal">
+                  <img
+                    class="w-[300px] xmd:w-[250px]"
+                    src="../assets/background/咖啡圖片1.png"
+                  />
+                  <p class="absolute bottom-7 right-2 text-white">咖啡飲品</p>
+                  <p class="absolute bottom-0 right-2 text-white">
+                    coffe drink
+                  </p>
+                </router-link>
+              </div>
+            </div>
+            <div>
+              <div class="relative flex cursor-pointer">
+                <router-link to="/Coffee_bag">
+                  <img
+                    class="w-[300px] xmd:w-[250px]"
+                    src="../assets/background/咖啡圖片2.png"
+                  />
+                  <p class="absolute bottom-7 right-2 text-white">咖啡豆</p>
+                  <p class="absolute bottom-0 right-2 text-white">
+                    coffee beans
+                  </p>
+                </router-link>
+              </div>
+            </div>
           </div>
-        </footer>
-        
-      </div>
+          <div>
+            <div class="relative flex cursor-pointer">
+              <router-link to="/meal">
+                <img src="../assets/background/咖啡圖片4.png" />
+                <p class="absolute bottom-7 right-2 text-black">簡餐</p>
+                <p class="absolute bottom-0 right-2 text-black">light meal</p>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer_1 class="text-white"/>
     </div>
-
-
-
+  </div>
 </template>
 
 <script>
-import header_1 from '../components/header_1.vue'
-import footer_1 from '../components/footer_1.vue'
+import header_1 from "../components/header_1.vue";
+import footer_1 from "../components/footer_1.vue";
 export default {
-  
-  components:{
-   header_1,
-   footer_1
-  }
+  components: {
+    header_1,
+    footer_1,
+  },
 };
 </script>
-
-<style scoped>
-
-</style>
