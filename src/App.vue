@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <router-link to="/about"></router-link>
-    <router-link to="/"></router-link>
-    <router-link to="/Coffee_bag"></router-link>
+    <div class="relative bg-slate-300 w-full min-h-screen">
+      <!-- <index class=" absolute inset-0 z-0" /> -->
+      <router-view />
+    </div>
   </div>
-  <router-view/>
 </template>
 
 <script>
 
-
+import Login from './views/Home/Login.vue'
 export default {
   name: "app",
-  
+  components: {
+    Login
+  }
 };
 </script>
 

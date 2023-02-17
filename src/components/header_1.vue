@@ -16,7 +16,7 @@
         src="../assets/background/Logo-咖啡.png"
         alt=""
       />
-      <router-link to="/" class="w-full md:w-auto text-xl">首頁</router-link>
+      <router-link to="/Home" class="w-full md:w-auto text-xl">首頁</router-link>
       <router-link to="/About" class="w-full md:w-auto text-xl"
         >關於我們</router-link
       >

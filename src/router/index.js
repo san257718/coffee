@@ -1,14 +1,20 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Coffee_bag from '../views/Coffee_bag.vue'
-import Coffee_items from '../views/Coffee_items.vue'
-import meal from '../views/meal.vue'
-import Shopping from '../views/Shopping.vue'
+import Index from '../views/index.vue'
+import Home from '../views/Home/Home.vue'
+import About from '../views/Home/About.vue'
+import Coffee_bag from '../views/Home/Coffee_bag.vue'
+import Coffee_items from '../views/Home/Coffee_items.vue'
+import Login from '../views/Home/Login.vue'
+import Shopping from '../views/Home/Shopping.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'index',
+    component: Index
+  },
+  {
+    path: '/Home',
     name: 'Home',
     component: Home
   },
@@ -16,6 +22,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/Coffee_bag',
@@ -26,11 +37,6 @@ const routes = [
     path: '/Coffee_items/:id',
     name: 'Coffee_items',
     component: Coffee_items
-  },
-  {
-    path: '/meal',
-    name: 'meal',
-    component: meal
   },
   {
     path: '/Shopping',

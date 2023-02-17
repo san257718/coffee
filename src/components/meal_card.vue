@@ -1,14 +1,13 @@
 <template>
-<router-link to="/Shopping">
-    <div class="w-64 h-64 relative group overflow-hidden">
-      <img class="w-full h-full object-cover" :src="`/image/${img}`" @click="addMeal()">
-      <div class="flex w-full h-16 flex-col items-center absolute -bottom-16 text-white bg-black/50 py-2 group-hover:opacity-100 group-hover:bottom-0 opacity-0 transition-all duration-300" >
-        <span>{{name}}</span>
-        <span>$ {{price}}</span>
+  <router-link to="/Shopping">
+      <div class="w-64 h-64 relative group overflow-hidden">
+        <img class="w-full h-full object-cover" :src="`/image/${img}`" @click="addMeal()">
+        <div class="flex w-full h-16 flex-col items-center absolute -bottom-16 text-white bg-black/50 py-2 group-hover:opacity-100 group-hover:bottom-0 opacity-0 transition-all duration-300" >
+          <span>{{name}}</span>
+          <span>$ {{price}}</span>
+        </div>
       </div>
-    </div>
-</router-link>
-
+  </router-link>
 </template>
 
 <script>

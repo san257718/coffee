@@ -2,7 +2,7 @@
   <div class="h-screen w-screen relative overflow-hidden">
     <img
       class="object-cover opacity-80 -z-50 h-full w-full"
-      src="../assets/background/購物車背景.png"
+      src="@/assets/background/購物車背景.png"
       alt=""
     />
     <div class="absolute top-0 h-full w-full overflow-y-auto">
@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import header_1 from "../components/header_1.vue";
-import cart from "../components/cart.vue";
-import meal_cart from "../components/meal_cart.vue";
-import footer_1 from "../components/footer_1.vue";
-import Coffee_items from "../assets/coffee.json";
-import light_meal from "../assets/light_meal.json";
+import header_1 from "../../components/header_1.vue";
+import cart from "../../components/cart.vue";
+import meal_cart from "../../components/meal_cart.vue";
+import footer_1 from "../../components/footer_1.vue";
+import Coffee_items from "../../assets/coffee.json";
+import light_meal from "../../assets/light_meal.json";
 
 export default {
   data() {
