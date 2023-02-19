@@ -1,10 +1,6 @@
 <template>
   <div class="h-screen w-screen relative overflow-hidden">
-    <img
-      class="object-cover opacity-80 -z-50 h-full w-full"
-      src="@/assets/background/購物車背景.png"
-      alt=""
-    />
+    <img class="object-cover opacity-80 -z-50 h-full w-full" src="@/assets/background/購物車背景.png" alt="" />
     <div class="absolute top-0 h-full w-full overflow-y-auto">
       <header_1 />
 
@@ -13,37 +9,24 @@
           <p>Sopping Cart</p>
         </div>
         <div class="text-3xl font-bold px-20">
-          <p class="border-b pb-12">購物車</p>
+          <p class="">購物車</p>
+        </div>
+      </div>
+      <div class="w-full flex justify-center">
+        <div class="bg-slate-100 w-1/2 md:w-full lg:w-4/5 xl:w-2/3">        
+          <cart v-for="item in cartData" :key="item.id" v-bind="item" @add="add($event)" @sub="sub($event)"
+            @del="del($event)" />
         </div>
       </div>
 
-      <cart
-        v-for="item in cartData"
-        :key="item.id"
-        v-bind="item"
-        @add="add($event)"
-        @sub="sub($event)"
-        @del="del($event)"
-      />
-
-      <meal_cart
-        v-for="item in MealData"
-        :key="item.id"
-        v-bind="item"
-        @addone="addone($event)"
-        @subone="subone($event)"
-        @delone="delone($event)"
-      />
-
       <footer_1 />
     </div>
-  </div>
+</div>
 </template>
 
 <script>
 import header_1 from "../../components/header_1.vue";
 import cart from "../../components/cart.vue";
-import meal_cart from "../../components/meal_cart.vue";
 import footer_1 from "../../components/footer_1.vue";
 import Coffee_items from "../../assets/coffee.json";
 import light_meal from "../../assets/light_meal.json";
@@ -61,7 +44,6 @@ export default {
   components: {
     footer_1,
     cart,
-    meal_cart,
     header_1,
   },
 
@@ -69,12 +51,6 @@ export default {
     cartData() {
       return this.cart.map((c) => {
         const temp = this.items.filter((item) => item.id == c.id)[0];
-        return Object.assign({}, c, temp);
-      });
-    },
-    MealData() {
-      return this.meal_cart.map((c) => {
-        const temp = this.items1.filter((item) => item.id == c.id)[0];
         return Object.assign({}, c, temp);
       });
     },
@@ -89,82 +65,26 @@ export default {
       });
     },
     sub(id) {
-      var delIndex = -1;
-
-      this.cart.forEach((e, index) => {
+      this.cart.forEach((e) => {
         if (e.id == id) {
           e.count--;
-
-          if (e.count <= 0) {
-            delIndex = index;
-          }
+        }
+        if(e.count <= 0) {
+          e.count = 0
         }
       });
-
-      if (delIndex !== -1) {
-        this.cart.splice(delIndex, 1);
-      }
       window.localStorage.setItem("coffee.carts", JSON.stringify(this.cart));
-    },
-    addone(id) {
-      this.meal_cart.forEach((c) => {
-        if (c.id == id) {
-          c.count++;
-        }
-      });
-      window.localStorage.setItem(
-        "coffee.Meal",
-        JSON.stringify(this.meal_cart)
-      );
-    },
-    subone(id) {
-      var delIndex = -1;
-
-      this.meal_cart.forEach((e, index) => {
-        if (e.id == id) {
-          e.count--;
-
-          if (e.count <= 0) {
-            delIndex = index;
-          }
-        }
-      });
-
-      if (delIndex !== -1) {
-        this.meal_cart.splice(delIndex, 1);
-      }
-      window.localStorage.setItem(
-        "coffee.Meal",
-        JSON.stringify(this.meal_cart)
-      );
-    },
-    delone(id) {
-      var delIndex = -1
-      this.meal_cart.forEach((e, index) => {
-
-        console.log(e)
-
-        if (e.id == id) {
-            delIndex = index;
-        }
-
-        if(delIndex !== -1) {
-            this.meal_cart.splice(delIndex, 1)
-        }
-      });
-
-      window.localStorage.setItem("coffee.Meal",JSON.stringify(this.meal_cart));
     },
     del(id) {
       var delIndex = -1
       this.cart.forEach((e, index) => {
 
-        if(e.id == id){
-            delIndex = index;
+        if (e.id == id) {
+          delIndex = index;
         }
 
-        if(delIndex !== -1) {
-            this.cart.splice(delIndex, 1)
+        if (delIndex !== -1) {
+          this.cart.splice(delIndex, 1)
         }
       })
 
@@ -179,5 +99,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

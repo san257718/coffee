@@ -1,41 +1,47 @@
 <template>
-  <div class="flex flex-wrap justify-evenly py-12">
-    <div>
-        <svg class="-mx-6" @click="$emit('del',id)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/></svg>
-      <div><img :src="`/image/${img1}`" alt=""></div>
-      <div class="flex justify-center py-5">
-        {{name}}
-      </div>
-    </div>
-    <div class="flex-row py-2">
-      <div class="flex py-8 my-4 border-t">
-        <p class="flex justify-center items-center md:w-full pr-4">數量</p>
-        <div class="flex items-center px-2  cursor-pointer">
-          <div @click="$emit('sub',id)">-</div>
+  <div class="w-full justify-center">
+    <div class="md:flex w-full my-2">
+      <div class="md:flex">
+        <div class="w-full md:w-[30%] flex justify-center md:justify-start md:ml-10">
+          <img :src="`/image/${img1}`" alt="">
         </div>
-
-        <div class="flex px-4">
-          <p class="flex justify-center">{{ count }}</p>
-        </div>
-
-        <div class="flex items-center px-2 cursor-pointer">
-          <div @click="$emit('add',id)">+</div>
+        <div class="md:w-40 md:flex text-center items-center md:ml-10">
+          {{ name }}
         </div>
       </div>
-
-      <div class="flex justify-between pt-4 border-t">
-        <p>小計</p>
-        <p>{{count * price}}</p>
-        <p>TWD</p>
+      <div class="md:flex">
+        <div class="w-full md:flex items-center mr-5">
+          <div class="md:w-40 flex justify-center items-center my-3 md:mr-10">
+            <p class="mr-3">小計</p>
+            <p>{{ count * price }}</p>
+            <p>TWD</p>
+          </div>
+          <div class="md:w-40 flex justify-center">
+            <p class="flex justify-center items-center md:w-full pr-4">數量</p>
+            <div class="flex items-center px-2  cursor-pointer">
+              <div @click="$emit('sub', id)">-</div>
+            </div>
+            <div class="flex px-4">
+              <p class="flex justify-center">{{ count }}</p>
+            </div>
+            <div class="flex items-center px-2 cursor-pointer">
+              <div @click="$emit('add', id)">+</div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center my-3 md:pl-10">
+            <div class=" bg-slate-800 w-20 h-10 text-white flex items-center justify-center">
+              <p @click="$emit('del', id)">刪除</p>
+            </div>
+          </div>
       </div>
-      
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props:[
+  props: [
     "id",
     "name",
     "price",
@@ -46,5 +52,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

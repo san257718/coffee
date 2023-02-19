@@ -1,17 +1,13 @@
 <template>
-
-  <div class="h-screen w-screen relative overflow-hidden">
-    <img class=" object-cover opacity-80 -z-50 h-full w-full" src="@/assets/background/購物車背景.png" alt="" />
-    <div class=" absolute top-0 h-full w-full overflow-y-auto">
+  <div class="h-screen w-full showbackground">
+    <div class=" h-full w-full overflow-y-auto">
       <header_1 class="text-black" />
 
       <main>
 
 
-        <div class="flex flex-wrap justify-evenly">
-
+        <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 justify-items-center">
           <card v-for="item in items" :key="item.id" v-bind="item" />
-
         </div>
       </main>
 
@@ -24,8 +20,6 @@
       </footer>
     </div>
   </div>
-
-
 </template>
 
 <script>
@@ -48,6 +42,8 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+.showbackground {
+  background-image: url('@/assets/background/購物車背景.png');
+}
 </style>
