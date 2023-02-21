@@ -13,15 +13,21 @@
         </div>
       </div>
       <div class="w-full flex justify-center">
-        <div class="bg-slate-100 w-1/2 md:w-full lg:w-4/5 xl:w-2/3">        
+        <div class="bg-slate-100 w-1/2 md:w-full lg:w-4/5 xl:w-2/3">
           <cart v-for="item in cartData" :key="item.id" v-bind="item" @add="add($event)" @sub="sub($event)"
             @del="del($event)" />
         </div>
       </div>
-
+      <div class="w-full flex justify-center h-32">
+        <div class="bg-slate-100 mt-10 w-1/2 md:w-full lg:w-4/5 xl:w-2/3">
+          <div class="w-3/4 h-full flex justify-end items-center">
+            <p class="">商品總金額: {{ priceData }}</p>
+          </div>
+        </div>
+      </div>
       <footer_1 />
     </div>
-</div>
+  </div>
 </template>
 
 <script>
@@ -54,6 +60,11 @@ export default {
         return Object.assign({}, c, temp);
       });
     },
+    priceData() {
+      const initialValue = 0;
+      const prices = this.cartData.map((item) => item.count * item.price)
+      return prices.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+    }
   },
 
   methods: {
@@ -69,23 +80,17 @@ export default {
         if (e.id == id) {
           e.count--;
         }
-        if(e.count <= 0) {
+        if (e.count <= 0) {
           e.count = 0
         }
       });
       window.localStorage.setItem("coffee.carts", JSON.stringify(this.cart));
     },
     del(id) {
-      var delIndex = -1
-      this.cart.forEach((e, index) => {
-
+      this.cart.forEach((e) => {
         if (e.id == id) {
-          delIndex = index;
-        }
-
-        if (delIndex !== -1) {
-          this.cart.splice(delIndex, 1)
-        }
+          this.cart.splice(-1, 1)
+        };
       })
 
       window.localStorage.setItem("coffee.carts", JSON.stringify(this.cart));

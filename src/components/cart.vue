@@ -33,7 +33,7 @@
               <p @click="$emit('del', id)">刪除</p>
             </div>
           </div>
-      </div>
+        </div>
       </div>
     </div>
   </div>
